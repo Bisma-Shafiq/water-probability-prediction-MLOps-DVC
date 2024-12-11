@@ -1,0 +1,74 @@
+schema: '2.0'
+stages:
+  data_collection:
+    cmd: python water-Probability-MLOps-Project\src\data\data_collection.py
+    deps:
+    - path: water-Probability-MLOps-Project\src\data\data_collection.py
+      hash: md5
+      md5: 940e9a56969cce1fdb695f1fd86ac6b7
+      size: 1995
+    params:
+      params.yaml:
+        data_collection.test_size: 0.2
+    outs:
+    - path: data\raw
+      hash: md5
+      md5: c0c2d65c14a603e91e029fda3c344a5c.dir
+      size: 522262
+      nfiles: 2
+  data_preprocessing:
+    cmd: python water-Probability-MLOps-Project\src\data\data_preprocessing.py
+    deps:
+    - path: data\raw
+      hash: md5
+      md5: c0c2d65c14a603e91e029fda3c344a5c.dir
+      size: 522262
+      nfiles: 2
+    - path: water-Probability-MLOps-Project\src\data\data_preprocessing.py
+      hash: md5
+      md5: d0af1dccaaff3f2e003b6a2d6ced211d
+      size: 1842
+    params:
+      params.yaml:
+        data_collection.test_size: 0.2
+    outs:
+    - path: data\processed
+      hash: md5
+      md5: e34c84b2d0f2a75442271cd6c5779b7c.dir
+      size: 546895
+      nfiles: 2
+  model_building:
+    cmd: python water-Probability-MLOps-Project\src\model\model_building.py
+    deps:
+    - path: data\processed
+      hash: md5
+      md5: e34c84b2d0f2a75442271cd6c5779b7c.dir
+      size: 546895
+      nfiles: 2
+    - path: water-Probability-MLOps-Project\src\model\model_building.py
+      hash: md5
+      md5: 1d3c407d6fb27bb616b20dd0722f2531
+      size: 2559
+    params:
+      params.yaml:
+        model_building.n_estimators: 100
+    outs:
+    - path: models\model.pkl
+      hash: md5
+      md5: e072fb294a752118af78be127eb82f7e
+      size: 7403507
+  model_evaluation:
+    cmd: python water-Probability-MLOps-Project\src\model\model_evaluation.py
+    deps:
+    - path: data\processed
+      hash: md5
+      md5: e34c84b2d0f2a75442271cd6c5779b7c.dir
+      size: 546895
+      nfiles: 2
+    - path: water-Probability-MLOps-Project\src\model\model_evaluation.py
+      hash: md5
+      md5: 08d43dd0a36c4f85755e63d1ef785012
+      size: 2023
+    params:
+      params.yaml:
+        model_building.n_estimators: 100

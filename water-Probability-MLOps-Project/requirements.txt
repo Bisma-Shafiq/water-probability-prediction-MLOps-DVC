@@ -24,3 +24,7 @@ sklearn
 =======
 python-dotenv>=0.5.1
 >>>>>>> 57b04c9098de18ff54e82e4b0fd50c63a2090a96
+
+# add locally space for data version strage
+# dvc remote add -d myremote C:\Users\Dell\AppData\Local\Temp\dvc
+# add dvc in vs code (pip install dvc ,  dvc init)

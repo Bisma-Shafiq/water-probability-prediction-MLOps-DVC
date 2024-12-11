@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/MLOps%20Project/Water_Probability_Project/mlruns/0/f7e231dea85444fdbc720d055faca429/artifacts
+end_time: 1733923603802
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f7e231dea85444fdbc720d055faca429
+run_name: calm-hen-399
+run_uuid: f7e231dea85444fdbc720d055faca429
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733923593180
+status: 3
+tags: []
+user_id: Dell

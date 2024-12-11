@@ -1,0 +1,37 @@
+stages:
+  data_collection:
+    cmd: python water-Probability-MLOps-Project\src\data\data_collection.py
+    deps:
+      - water-Probability-MLOps-Project\src\data\data_collection.py
+    params:
+      - data_collection.test_size
+    outs:
+      - data\raw
+
+  data_preprocessing:
+    cmd: python water-Probability-MLOps-Project\src\data\data_preprocessing.py
+    deps:
+      - data\raw
+      - water-Probability-MLOps-Project\src\data\data_preprocessing.py
+    params:
+      - data_collection.test_size
+    outs:
+      - data\processed
+
+  model_building:
+    cmd: python water-Probability-MLOps-Project\src\model\model_building.py
+    deps:
+      - data\processed
+      - water-Probability-MLOps-Project\src\model\model_building.py
+    params:
+      - model_building.n_estimators
+    outs:
+      - models\model.pkl
+
+  model_evaluation:
+    cmd: python water-Probability-MLOps-Project\src\model\model_evaluation.py
+    deps:
+      - data\processed
+      - water-Probability-MLOps-Project\src\model\model_evaluation.py
+    params:
+      - model_building.n_estimators
