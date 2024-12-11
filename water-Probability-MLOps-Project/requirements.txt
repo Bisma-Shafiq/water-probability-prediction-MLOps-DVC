@@ -1,0 +1,22 @@
+# local package
+-e .
+
+# external requirements
+click
+Sphinx
+coverage
+awscli
+flake8
+<<<<<<< HEAD
+python-dotenv>=0.5.1
+=======
+python-dotenv
+mlflow
+dagshub
+seaborn
+pandas
+numpy
+matplotlib
+xgboost
+sklearn
+>>>>>>> e079af6 (experiment added)
