@@ -60,15 +60,28 @@ stages:
   model_evaluation:
     cmd: python water-Probability-MLOps-Project\src\model\model_evaluation.py
     deps:
-    - path: data\processed
+    - path: data\processed\test_processed.csv
       hash: md5
-      md5: e34c84b2d0f2a75442271cd6c5779b7c.dir
-      size: 546895
-      nfiles: 2
+      md5: 3615f7f1bef36cfaa850a8dea9d84320
+      size: 109438
+    - path: models\model.pkl
+      hash: md5
+      md5: e072fb294a752118af78be127eb82f7e
+      size: 7403507
     - path: water-Probability-MLOps-Project\src\model\model_evaluation.py
       hash: md5
-      md5: 08d43dd0a36c4f85755e63d1ef785012
-      size: 2023
-    params:
-      params.yaml:
-        model_building.n_estimators: 100
+      md5: dc775bad157e2d7a92b19e4c7183fd2f
+      size: 5245
+    outs:
+    - path: confusion_matrix_Best_Model.png
+      hash: md5
+      md5: 7eb999b9038398fe63e0d3f249ddfb7f
+      size: 18643
+    - path: reports/metrics.json
+      hash: md5
+      md5: b3269df040756723fa24312e21fc887f
+      size: 151
+    - path: reports/run_info.json
+      hash: md5
+      md5: fd354d4f94a6e4c75336d4af814642c4
+      size: 87

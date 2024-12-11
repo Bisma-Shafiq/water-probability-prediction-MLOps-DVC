@@ -31,7 +31,10 @@ stages:
   model_evaluation:
     cmd: python water-Probability-MLOps-Project\src\model\model_evaluation.py
     deps:
-      - data\processed
+      - data\processed\test_processed.csv
+      - models\model.pkl
       - water-Probability-MLOps-Project\src\model\model_evaluation.py
-    params:
-      - model_building.n_estimators
+    outs:
+      - reports/metrics.json
+      - reports/run_info.json
+      - confusion_matrix_Best_Model.png
