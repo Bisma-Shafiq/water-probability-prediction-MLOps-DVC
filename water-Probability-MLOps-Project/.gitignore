@@ -1,9 +1,13 @@
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 myenv
 =======
 myenv/
 >>>>>>> e079af6 (experiment added)
+=======
+myenv
+>>>>>>> 57b04c9098de18ff54e82e4b0fd50c63a2090a96
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
